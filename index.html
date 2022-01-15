@@ -2,10 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Deemanuel F. Portfolio</title>
         <link rel="stylesheet" type="text/css" href="./stylesheet/Portfolio_CSS.css">
-        <script src="JS/one_page_website.js"></script>
     </head>
 
     <!--Body-->
@@ -48,11 +47,46 @@
             <!--END OF VIDTEXT-->
         <!-- END OF HOME -->
 
+        <!-- SlideShow -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 1 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/me.jpg" alt="Picture of yourself">
+                        <div class="text">I'm ready to work with you on your next big project</div>
+                    </div>
+                    <!-- Slide 2 of 2 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/Controller.jpg" alt="Primary"> 
+                        <div class="text">I am a coder,<br> with a love for<br>Game Development</div>
+                    </div>
+                    <!-- Slide 3 of 3 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/coding.jpg" alt="coding">
+                        <div class="text">With experince in multiple languages such as:<br>C#, C++, and Python</div>
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>  
+                </div>
+            </div>
+        </div>
+        <!-- End SlideShow-->
+
         <!-- ABOUT -->
                 <div class="Row" id="About">
                     <!--Left Column-->
                     <div class="Column_2">
-                        <img src="images/Computer.jpg" alt="typical day by day" height="400px" width="650px" onclick= openModal();currentSlide(1) class="hover-shadow">
+                        <img src="images/Computer.jpg" alt="typical day by day" height="400px" width="650px" class="hover-shadow">
                     </div>
                     <!--Right Column-->
                     <div class="Column_1">
@@ -81,20 +115,15 @@
             </div>
             <!-- Right Column -->
             <div class="Column_2">
-                <a href="https://github.com/DFaustin175" target="_blank"><img src="images/Github.jpg" alt="Github Logo" onclick="openModal();currentSlide(2)" class="hover-shadow"></a>
+                <a href="https://github.com/DFaustin175" target="_blank"><img src="images/Github.jpg" alt="Github Logo" class="hover-shadow"></a>
             </div>
         </div>
         <!--END OF GITHUB SECTION-->
 
         <!-- CONTACT -->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="images/Mail.jpg" alt="Contact image" onclick="openModal();currentSlide(3)" class="hover-shadow">
-            </div>
-            <!-- Contact Info, Right Column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
+        <div id="Contact">
+                <button onclick = "openForm()" class="Pop_Up_Button">CONTACT</button>
+                <div class="form-popup" id="myForm">
                 <form action="https://formspree.io/f/mjvlkdng" method="POST">
                     <label>Your Name</label>
                         <input type="text" placeholder="Please enter your name here"><br><br>
@@ -102,58 +131,20 @@
                         <input type="text" id="Email" placeholder="Please enter your email here"><br><br>
                     <label>Message:</label>
                         <input type="text" id="Message" placeholder="Please enter your message here"><br><br>
-                        <input type="submit" value="SUBMIT"><br><br>
+                        <button type="submit" class="btn">SUBMIT</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                        
                 </form>
-            </div>
+                </div>
         </div>
         <!-- END OF CONTACT -->
 
-
-        <!-- Modal/Lightbox -->
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-
-                <div class="mySlides">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="images/Computer.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="images/Github.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="images/Mail.jpg" style="width:100%">
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-                <a class="next" onclick="plusSlides(1)">&#10095</a>
-
-                <div class="caption-container">
-                    <p id="caption"></p>
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="images/Computer.jpg" onclick="currentSlide(1)" alt="comp">
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="images/Github.jpg" onclick="currentSlide(2)" alt="git">
-                </div>
-
-                <div class="column">
-                    <img class="demo" src="images/Mail.jpg" onclick="currentSlide(3)" alt="mail">
-                </div>
-            </div>
-        </div>
         <!-- FOOTER -->
         <footer>
             <p>
                 <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
             </p>
         </footer>
+        <script src="JS/one_page_website.js"></script>
     </body>
 </html>
