@@ -391,7 +391,7 @@ button:hover, .form-container .btn:hover {
 }
 
 .active, .dot:hover {
-    background-color: black;
+    background-color: grey;
 }
 
 .fade {
